@@ -1,0 +1,45 @@
+{% extends "_base.html" %}
+{% block content %}
+
+
+	<div class="container">
+
+	<h1> Image Captioning </h1>
+
+	<!-- Sending data on same route so we need to handle both get and post -->
+		<div class="container">
+		<form method="POST" action="/" enctype="multipart/form-data">
+		
+			<input type="file" name="userfile" placeholder="Enter your Image" class="btn btn-outline-secondary">
+			<button type="submit" class="btn btn-primary"> Upload </button>
+
+			<br>
+			
+		</form>
+		</div>
+
+		<br>
+		<br>
+		<br>
+		<div class="container">
+
+		{% if your_result %} <!-- as initially your_caption is empty -->
+			
+			<img  id="imgPreview" src = "{{your_result['image']}}">
+			<br> <!-- break-->
+			<h2>  <span style="font-family:'Courier New'">Generated Caption : {{your_result['caption']}} </span> </h2>
+			<br> <!-- break-->
+			<audio controls>
+				<source id="soundPreview"  src="{{your_result['sound']}}" type="audio/mpeg" >
+			</audio>
+		
+		{% endif %}
+		</div>
+
+	</div>
+
+
+{% endblock %}
+
+
+
