@@ -1,0 +1,12 @@
+coverage>=4.5.4
+Flask==2.2.2
+Flask-Bootstrap==3.3.7.1
+keras
+tensorflow
+gtts
+numpy
+pandas
+matplotlib
+math
+pickle
+
